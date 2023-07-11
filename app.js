@@ -36,7 +36,7 @@ function initialQuestions() {
     //Below adds the the user's answer to the answers array
     answers.push(prompt(questions[i]));
     let j = i + 1;
-    console.log("The user answered " + answers[i] + " for Question #" + j);
+    console.log("The user answered " + answers[i] + " for Question #" + j + ". The answer is " + correctAnswers[i]);
     //Below checks the user's answer with the correct answer, outputs either correct or wrong, then explains why using the explanations array
     if (answers[i].toLowerCase() === correctAnswers[i]) {
       alert(
