@@ -38,7 +38,7 @@ function initialQuestions() {
     let j = i + 1;
     console.log("The user answered " + answers[i] + " for Question #" + j);
     //Below checks the user's answer with the correct answer, outputs either correct or wrong, then explains why using the explanations array
-    if (answers[i].toLowerCase === correctAnswers[i]) {
+    if (answers[i].toLowerCase() === correctAnswers[i]) {
       alert(
         "Correct!\n\nThe answer is " +
           correctAnswers[i] +
