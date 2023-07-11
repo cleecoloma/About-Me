@@ -8,7 +8,12 @@ body {
 
 main {
   background-color: lightgray;
-  height: 100vh;
+  height: 100%;
+  padding: 2rem;
+}
+
+main h2 {
+  padding-bottom: 1rem;
 }
 
 header {
@@ -34,6 +39,15 @@ nav {
 .nav-link:hover {
   background-color: antiquewhite;
   color: #1B6B93;
+}
+
+.sections {
+  background-color: #AFD3E2;
+  margin: 0 12rem 2rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 5px 0px rgba(128, 0, 0, 1);
 }
 
 footer {
