@@ -114,6 +114,37 @@ function guessTheNumber() {
 //This invokes/calls the function guessTheNumber
 // guessTheNumber();
 
+// let userGuess = "";
+// let countryTries = 6;
+// const countriesVisited = [
+//   "Canada",
+//   "Japan",
+//   "South Korea",
+//   "Philippines",
+//   "Taiwan",
+// ];
+// let guessedCorrectly = false;
+
+// function guessCountry() {
+//   for (let i = 0; i < 6; i++) {
+//     let userCountry = prompt("Which countries have I been to?");
+//     for (let j = 0; j < countriesVisited.length; j++) {
+//       if (userCountry.toLowerCase() === countriesVisited[j].toLowerCase()) {
+//         alert("Congrats! You guessed one of the countries!");
+//         score++;
+//       }
+//     }
+//     countryTries--;
+//     alert(
+//       userCountry +
+//         " is not one of the countries!\n\nPlease try again!\n\nRemaining guesses: " +
+//         countryTries
+//     );
+//   }
+
+//   alert("Thank you for playing the games!\n\n Your total score is: " + score);
+// }
+
 let userGuess = "";
 let countryTries = 6;
 const countriesVisited = [
@@ -123,25 +154,45 @@ const countriesVisited = [
   "Philippines",
   "Taiwan",
 ];
+let guessedCorrectly = false;
+let userCountry = "";
 
-function guessCountry() {
-  for (let i = 0; i < 6; i++) {
-    let userCountry = prompt("Which countries have I been to?");
-    for (let j = 0; j < countriesVisited.length; j++) {
-      if (userCountry.toLowerCase() === countriesVisited[j].toLowerCase()) {
-        alert("Congrats! You guessed one of the countries!");
-        score++;
-      }
+//This function loops through the countriesVisited array to see if the userCountry matches.
+function matchUserInput() {
+  for (let i = 0; i < countriesVisited.length; i++) {
+    if (userCountry.toLowerCase() === countriesVisited[i].toLowerCase()) {
+      score++; //adds 1 to score
+      guessedCorrectly = true; //changes boolean from false true
     }
-    countryTries--;
-    alert(
-      userCountry +
-        " is not one of the countries!\n\nPlease try again!\n\nRemaining guesses: " +
-        countryTries
-    );
   }
+}
 
-  alert("Thank you for playing the games!\n\n Your total score is: " + score);
+//This function loops through how many tries the user have. Starting tries is 6 and
+function guessCountry() {
+  for (let j = 0; j < 6; j++) {
+    userCountry = prompt("Which countries have I been to?");
+    matchUserInput();
+    if (guessedCorrectly) {
+      alert(
+        "Congrats! " + userCountry + " is one of the countries I have visited!"
+      );
+      break;
+    } else {
+      countryTries--;
+      alert(
+        "Sorry, " +
+          userCountry +
+          " is not one of them.\n\nPlease try again!\n\nYou have " +
+          countryTries +
+          " remaining!"
+      );
+    }
+  }
+  alert(
+    "Thank you for playing my games!\n\n You scored " +
+      score +
+      " out of 7 points!"
+  );
 }
 
 //This invokes/calls the function guessCountry
