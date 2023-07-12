@@ -19,6 +19,7 @@ const correctAnswers = ['no', 'yes', 'no', 'yes', 'yes'];
 //These explanations are taken from ChatGPT
 const explanations = [
   "Dogs typically do not recognize themselves in a mirror. They may react to their reflection as if it's another dog or show curiosity, but they generally do not understand that it is their own image.",
+  "Dogs have the ability to sense and understand human emotions. They are known to be highly perceptive and can often pick up on cues such as body language, tone of voice, and facial expressions to gauge their owner's emotional state.",
   "Dogs do not have a precise sense of time like humans do. While they may have an internal sense of routine and be able to anticipate certain events, their perception of time is primarily based on associative memory rather than a linear understanding of hours or minutes.",
   "Dogs can see colors, but their range of color vision is more limited compared to humans. They primarily see the world in shades of blue and yellow, with difficulty distinguishing between red and green hues.",
   "Dogs are capable of feeling empathy for other animals, including humans and other dogs. They can show concern, comfort, and exhibit behaviors that indicate empathy towards those in distress or pain. However, the extent of empathy may vary among individual dogs.",
