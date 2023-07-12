@@ -72,13 +72,16 @@ function initialQuestions() {
 }
 
 //This invokes/calls the initialQuestions function
-// initialQuestions();
+initialQuestions();
 
-const number = 3; //User will try and guess this number
+let userNumber = "";
+
+const number = Math.floor(Math.random() * 10 + 1); //Math.random and Math.floor are JavaScript built in object. This will produce a whole number from 1 thru 10. User will try and guess this number.
 let tries = 4; //This is how many tries does a user get
 
 //The function below asks the user to guess a number from 1 thru 10. They have up to 4 tries to guess the number.
 function guessTheNumber() {
+  console.log(number); //log what random number the user have to guess.
   for (let i = 0; i < 4; i++) {
     userNumber = parseInt(
       prompt("Guess the number!\n\nPick a number from 1 thru 10.")
@@ -112,38 +115,7 @@ function guessTheNumber() {
 }
 
 //This invokes/calls the function guessTheNumber
-// guessTheNumber();
-
-// let userGuess = "";
-// let countryTries = 6;
-// const countriesVisited = [
-//   "Canada",
-//   "Japan",
-//   "South Korea",
-//   "Philippines",
-//   "Taiwan",
-// ];
-// let guessedCorrectly = false;
-
-// function guessCountry() {
-//   for (let i = 0; i < 6; i++) {
-//     let userCountry = prompt("Which countries have I been to?");
-//     for (let j = 0; j < countriesVisited.length; j++) {
-//       if (userCountry.toLowerCase() === countriesVisited[j].toLowerCase()) {
-//         alert("Congrats! You guessed one of the countries!");
-//         score++;
-//       }
-//     }
-//     countryTries--;
-//     alert(
-//       userCountry +
-//         " is not one of the countries!\n\nPlease try again!\n\nRemaining guesses: " +
-//         countryTries
-//     );
-//   }
-
-//   alert("Thank you for playing the games!\n\n Your total score is: " + score);
-// }
+guessTheNumber();
 
 let userGuess = "";
 let countryTries = 6;
