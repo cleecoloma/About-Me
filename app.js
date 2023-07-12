@@ -1,6 +1,9 @@
 "use strict";
 
 let userName = "";
+let userNumber = "";
+let score = 0;
+const number = 3;
 
 //These questions are taken from ChatGPT
 const questions = [
@@ -45,6 +48,7 @@ function initialQuestions() {
           "\n\nSee below for explanation\n" +
           explanations[i]
       );
+      score = score + 1;
     } else {
       alert(
         "Wrong\n\nThe correct answer is " +
@@ -54,7 +58,28 @@ function initialQuestions() {
       );
     }
   }
-  alert("Thank you for playing " + userName);
+  alert("Thank you for playing " + userName + "!\n\nNow lets try a number guessing game!");
 }
 
-initialQuestions();
+//This invokes/calls the initialQuestions function
+// initialQuestions();
+
+//The function below asks the user to guess a number from 1 thru 10. They have up to 4 tries to guess the number.
+function guessTheNumber() {
+  while (0 < userNumber <= 10) {
+    let userNumber = parseInt(alert("Guess the number!\n\nPick a number from 1 thru 10."));
+  }
+  for (let i = 0; i < 4; i++) {
+    if (userNumber === number) {
+      alert("You guessed the number correctly!");
+      score++
+    } else if (userNumber > number) {
+      alert("Number you guessed is too high!\n\nTry again!");
+    } else {
+      alert("Number you guessed is too low!\n\nTry again!");
+    }
+  }
+  alert("Thank you for playing the guess the number game!")
+}
+
+guessTheNumber
