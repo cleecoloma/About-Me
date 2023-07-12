@@ -17,7 +17,7 @@ const questions = [
 const answers = [];
 
 //These answers are taken from ChatGPT
-const correctAnswers = ['no', 'yes', 'no', 'yes', 'yes'];
+const correctAnswers = ["no", "yes", "no", "yes", "yes"];
 
 //These explanations are taken from ChatGPT
 const explanations = [
@@ -39,7 +39,14 @@ function initialQuestions() {
     //Below adds the the user's answer to the answers array
     answers.push(prompt(questions[i]));
     let j = i + 1;
-    console.log("The user answered " + answers[i] + " for Question #" + j + ". The answer is " + correctAnswers[i]);
+    console.log(
+      "The user answered " +
+        answers[i] +
+        " for Question #" +
+        j +
+        ". The answer is " +
+        correctAnswers[i]
+    );
     //Below checks the user's answer with the correct answer, outputs either correct or wrong, then explains why using the explanations array
     if (answers[i].toLowerCase() === correctAnswers[i]) {
       alert(
@@ -58,7 +65,11 @@ function initialQuestions() {
       );
     }
   }
-  alert("Thank you for playing " + userName + "!\n\nNow lets try a number guessing game!");
+  alert(
+    "Thank you for playing " +
+      userName +
+      "!\n\nNow lets try a number guessing game!"
+  );
 }
 
 //This invokes/calls the initialQuestions function
@@ -66,20 +77,22 @@ function initialQuestions() {
 
 //The function below asks the user to guess a number from 1 thru 10. They have up to 4 tries to guess the number.
 function guessTheNumber() {
-  while (0 < userNumber <= 10) {
-    let userNumber = parseInt(alert("Guess the number!\n\nPick a number from 1 thru 10."));
-  }
   for (let i = 0; i < 4; i++) {
+    let userNumber = parseInt(
+      prompt("Guess the number!\n\nPick a number from 1 thru 10.")
+    );
     if (userNumber === number) {
       alert("You guessed the number correctly!");
-      score++
+      score++; //adds a score if user guesses the number correctly
+      break; //stops the for loop when answered correctly.
     } else if (userNumber > number) {
       alert("Number you guessed is too high!\n\nTry again!");
     } else {
       alert("Number you guessed is too low!\n\nTry again!");
     }
   }
-  alert("Thank you for playing the guess the number game!")
+  alert("Thank you for playing the guess the number game!");
 }
 
-guessTheNumber
+//This invokes/calls the function guessTheNumber
+guessTheNumber();
