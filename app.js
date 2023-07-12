@@ -53,7 +53,7 @@ function initialQuestions() {
           "\n\nSee below for explanation\n" +
           explanations[i]
       );
-      score = score + 1;
+      score++;
       console.log("Current score is " + score); //prints the current score
     } else {
       alert(
@@ -65,7 +65,7 @@ function initialQuestions() {
     }
   }
   alert(
-    "Thank you for playing " +
+    "Thank you for playing the yes or no game " +
       userName +
       "!\n\nNow lets try a number guessing game!"
   );
@@ -74,13 +74,13 @@ function initialQuestions() {
 //This invokes/calls the initialQuestions function
 // initialQuestions();
 
-const number = 3;
-let tries = 4;
+const number = 3; //User will try and guess this number
+let tries = 4; //This is how many tries does a user get
 
 //The function below asks the user to guess a number from 1 thru 10. They have up to 4 tries to guess the number.
 function guessTheNumber() {
   for (let i = 0; i < 4; i++) {
-    let userNumber = parseInt(
+    userNumber = parseInt(
       prompt("Guess the number!\n\nPick a number from 1 thru 10.")
     );
     if (userNumber === number) {
@@ -88,7 +88,7 @@ function guessTheNumber() {
       score++; //adds a score if user guesses the number correctly
       break; //stops the for loop when answered correctly.
     } else if (userNumber > number) {
-      tries -= 1;
+      tries--; //subtracts remaining tries by 1
       alert(
         "You guessed " +
           userNumber +
@@ -96,7 +96,7 @@ function guessTheNumber() {
           tries
       );
     } else {
-      tries -= 1;
+      tries--;
       alert(
         "You guessed " +
           userNumber +
@@ -105,11 +105,44 @@ function guessTheNumber() {
       );
     }
   }
-  alert("Thank you for playing the guess the number game!");
+  alert(
+    "Thank you for playing the guess the number game!\n\nNow let's try the country guessin game!"
+  );
   console.log("Current score is " + score); //prints the current score
 }
 
 //This invokes/calls the function guessTheNumber
 // guessTheNumber();
 
+let userGuess = "";
+let countryTries = 6;
+const countriesVisited = [
+  "Canada",
+  "Japan",
+  "South Korea",
+  "Philippines",
+  "Taiwan",
+];
 
+function guessCountry() {
+  for (let i = 0; i < 6; i++) {
+    let userCountry = prompt("Which countries have I been to?");
+    for (let j = 0; j < countriesVisited.length; j++) {
+      if (userCountry.toLowerCase() === countriesVisited[j].toLowerCase()) {
+        alert("Congrats! You guessed one of the countries!");
+        score++;
+      }
+    }
+    countryTries--;
+    alert(
+      userCountry +
+        " is not one of the countries!\n\nPlease try again!\n\nRemaining guesses: " +
+        countryTries
+    );
+  }
+
+  alert("Thank you for playing the games!\n\n Your total score is: " + score);
+}
+
+//This invokes/calls the function guessCountry
+guessCountry();
