@@ -117,7 +117,6 @@ function guessTheNumber() {
 //This invokes/calls the function guessTheNumber
 guessTheNumber();
 
-let userGuess = "";
 let countryTries = 6;
 const countriesVisited = [
   "Canada",
