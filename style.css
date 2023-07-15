@@ -31,9 +31,14 @@ header {
   height: 6rem;
 }
 
+p, li {
+  font-family: 'Roboto', sans-serif;
+}
+
 #header-title {
   padding: 1rem 0 0;
   color: white;
+  font-family: 'Abril Fatface', cursive;
 }
 
 nav {
